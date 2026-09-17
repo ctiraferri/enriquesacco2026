@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ruben Lapaglia — Tres direcciones de diseño</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23101214'/><text x='16' y='24' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23EDECE8' text-anchor='middle'>L</text></svg>">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#101214">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#101214; --bg-2:#181B1E; --line:#2A2E32;
+  --fg:#EDECE8; --mut:#8C9298;
+  --a:#C4161C; --b:#B4121B; --c:#5E7D8A;
+  --head:"Outfit",system-ui,sans-serif; --body:"Work Sans",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{ box-sizing:border-box; }
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:var(--body); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{ color:inherit; }
+:focus-visible{ outline:2px solid var(--fg); outline-offset:3px; }
+.wrap{ max-width:1080px; margin-inline:auto; padding-inline:clamp(20px,5vw,48px); }
+
+header{ padding-block:clamp(48px,9vw,96px) clamp(32px,5vw,56px); }
+.eyebrow{
+  font-family:var(--head); font-size:12px; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--mut); margin:0;
+}
+h1{
+  font-family:var(--head); font-weight:500; letter-spacing:-.035em;
+  font-size:clamp(34px,5.6vw,58px); line-height:1.08; margin:16px 0 20px;
+}
+.lede{ color:var(--mut); max-width:62ch; font-weight:300; font-size:clamp(17px,2vw,19px); margin:0; }
+
+.grid{ display:grid; gap:20px; padding-bottom:clamp(48px,8vw,96px); }
+@media (min-width:860px){ .grid{ grid-template-columns:repeat(3,1fr); gap:24px; } }
+
+.card{
+  display:flex; flex-direction:column;
+  background:var(--bg-2); border:1px solid var(--line); border-radius:6px;
+  overflow:hidden; text-decoration:none;
+  transition:border-color .3s var(--ease), transform .3s var(--ease);
+}
+.card:hover{ border-color:#454B51; transform:translateY(-3px); }
+
+.swatch{ height:112px; display:flex; }
+.swatch i{ flex:1; display:block; }
+
+.card__in{ padding:22px 22px 26px; display:flex; flex-direction:column; gap:10px; flex:1; }
+.card__k{ font-family:var(--head); font-size:11px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--mut); }
+.card h2{ font-family:var(--head); font-weight:500; font-size:25px; letter-spacing:-.025em; margin:0; line-height:1.15; }
+.card p{ margin:0; font-size:15px; color:var(--mut); line-height:1.6; }
+.meta{ margin-top:auto; padding-top:16px; border-top:1px solid var(--line); display:grid; gap:5px; font-size:13px; color:var(--mut); }
+.meta b{ color:var(--fg); font-weight:500; }
+.go{
+  margin-top:16px; display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--head); font-weight:600; font-size:14px; color:var(--fg);
+}
+.go svg{ width:15px; height:15px; fill:currentColor; transition:transform .3s var(--ease); }
+.card:hover .go svg{ transform:translateX(4px); }
+
+footer{ border-top:1px solid var(--line); padding-block:28px 40px; color:var(--mut); font-size:13px; line-height:1.7; }
+@media (prefers-reduced-motion: reduce){ *{ transition-duration:.01ms !important; } }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <p class="eyebrow">Ruben Lapaglia · Club Atlético Independiente</p>
+  <h1>Tres direcciones de diseño<br>para la one-page</h1>
+  <p class="lede">
+    Cada maqueta explora un grado distinto de apoyo en la identidad del club y un lenguaje visual
+    propio. La idea no es elegir una tal cual: es descartar, mezclar y definir la final con el cliente.
+    Todas funcionan en mobile y son 100% estáticas para GitHub Pages.
+  </p>
+</header>
+
+<main class="wrap grid">
+
+  <a class="card" href="maqueta-a/">
+    <span class="swatch" aria-hidden="true">
+      <i style="background:#12100F"></i><i style="background:#F4F1EA"></i><i style="background:#C4161C"></i><i style="background:#6B6560"></i>
+    </span>
+    <span class="card__in">
+      <span class="card__k">Maqueta A</span>
+      <h2>Editorial</h2>
+      <p>Papel hueso y tinta, serif de diario, mucho aire. El rojo aparece solo en numerales y acentos. Gravedad institucional, tono de manifiesto.</p>
+      <span class="meta">
+        <span>Identidad: <b>alusión, no calco</b></span>
+        <span>Tipografía: <b>Libre Bodoni + Public Sans</b></span>
+        <span>Riesgo: <b>puede leerse solemne</b></span>
+      </span>
+      <span class="go">Ver maqueta <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12m0 0l-5-5m5 5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </span>
+  </a>
+
+  <a class="card" href="maqueta-b/">
+    <span class="swatch" aria-hidden="true">
+      <i style="background:#0A0A0A"></i><i style="background:#B4121B"></i><i style="background:#EFEDE8"></i><i style="background:#8E8B85"></i>
+    </span>
+    <span class="card__in">
+      <span class="card__k">Maqueta B</span>
+      <h2>Bloques</h2>
+      <p>Identidad del club al frente, pero con rojo profundo en campos planos y sin gradientes. Condensada gigante, franja de ticker, filas que se llenan de color.</p>
+      <span class="meta">
+        <span>Identidad: <b>club explícita</b></span>
+        <span>Tipografía: <b>Barlow Condensed + Barlow</b></span>
+        <span>Riesgo: <b>más cerca de lo ya visto</b></span>
+      </span>
+      <span class="go">Ver maqueta <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12m0 0l-5-5m5 5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </span>
+  </a>
+
+  <a class="card" href="maqueta-c/">
+    <span class="swatch" aria-hidden="true">
+      <i style="background:#FBFAF8"></i><i style="background:#1B2A31"></i><i style="background:#5A6169"></i><i style="background:#B4121B"></i>
+    </span>
+    <span class="card__in">
+      <span class="card__k">Maqueta C</span>
+      <h2>Informe</h2>
+      <p>Claro, modular, casi neutro. Diagnóstico con cifras y compromisos con plazo explícito. El rojo aparece dos veces en toda la página.</p>
+      <span class="meta">
+        <span>Identidad: <b>casi neutra / estadista</b></span>
+        <span>Tipografía: <b>Outfit + Work Sans</b></span>
+        <span>Riesgo: <b>puede sentirse ajena al club</b></span>
+      </span>
+      <span class="go">Ver maqueta <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12m0 0l-5-5m5 5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </span>
+  </a>
+
+</main>
+
+<footer class="wrap">
+  Maquetas de diseño con contenido de ejemplo. Los datos marcados <b>[así]</b> deben verificarse antes de publicar.
+  Sitio no oficial del Club Atlético Independiente.
+</footer>
+
+</body>
+</html>

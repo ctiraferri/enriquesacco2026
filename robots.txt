@@ -1,0 +1,5 @@
+# Maqueta en revisión: no debe aparecer en buscadores.
+# Al publicar la versión final, borrar este archivo y el meta
+# name="robots" content="noindex, nofollow" de cada página.
+User-agent: *
+Disallow: /

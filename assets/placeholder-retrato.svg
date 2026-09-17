@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="Espacio reservado para retrato">
+  <defs>
+    <pattern id="h" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#B9B2A6" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="1200" fill="#DAD4C8"/>
+  <rect width="900" height="1200" fill="url(#h)" opacity=".55"/>
+  <g fill="none" stroke="#7E766A" stroke-width="3">
+    <circle cx="450" cy="470" r="130"/>
+    <path d="M250 900c0-110 90-200 200-200s200 90 200 200"/>
+  </g>
+  <text x="450" y="1075" font-family="Helvetica,Arial,sans-serif" font-size="34" letter-spacing="6" fill="#6C645A" text-anchor="middle">RETRATO 3:4</text>
+  <text x="450" y="1120" font-family="Helvetica,Arial,sans-serif" font-size="24" fill="#8A8277" text-anchor="middle">reemplazar por foto real</text>
+</svg>

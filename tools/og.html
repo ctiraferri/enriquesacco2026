@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<title>Generador de imagen para redes (1200×630)</title>
+<meta name="robots" content="noindex, nofollow">
+<!--
+  GENERADOR DE OPEN GRAPH
+  Abrir con ?v=a , ?v=b o ?v=c y capturar el lienzo a 1200×630.
+  Sirve para regenerar la imagen cuando cambie el claim, sin abrir un editor.
+
+  Para exportar a mano: abrir en Chrome, F12 -> Ctrl+Shift+P -> "Capture node
+  screenshot" sobre el elemento .og. O correr tools/generar-og.md.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&family=Libre+Bodoni:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;500;600&family=Public+Sans:wght@400;600&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#333; display:grid; place-items:center; min-height:100vh; }
+
+  /* lienzo exacto de Open Graph */
+  .og{
+    width:1200px; height:630px; position:relative; overflow:hidden;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+
+  /* ============ VARIANTE A — EDITORIAL ============ */
+  .og[data-v="a"]{
+    background:#F4F1EA; color:#12100F;
+    font-family:"Public Sans",sans-serif; padding:64px 72px;
+  }
+  .og[data-v="a"] .kicker{
+    font-size:19px; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:#6B6560;
+  }
+  .og[data-v="a"] h1{
+    font-family:"Libre Bodoni",serif; font-weight:400;
+    font-size:104px; line-height:.94; letter-spacing:-.03em;
+  }
+  .og[data-v="a"] h1 em{ font-style:italic; color:#C4161C; }
+  .og[data-v="a"] .foot{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    border-top:3px double #D4CEC1; padding-top:22px;
+    font-size:20px; letter-spacing:.16em; text-transform:uppercase; color:#6B6560; font-weight:600;
+  }
+  .og[data-v="a"] .foot b{ color:#12100F; font-weight:600; }
+
+  /* ============ VARIANTE B — BLOQUES ============ */
+  .og[data-v="b"]{
+    background:#0A0A0A; color:#EFEDE8;
+    font-family:"Barlow",sans-serif; padding:60px 72px 0;
+  }
+  .og[data-v="b"] .tag{
+    font-family:"Barlow Condensed",sans-serif; font-weight:600;
+    font-size:21px; letter-spacing:.2em; text-transform:uppercase; color:#E02A33;
+    border-left:4px solid #B4121B; padding-left:14px; line-height:1.3;
+  }
+  .og[data-v="b"] h1{
+    font-family:"Barlow Condensed",sans-serif; font-weight:700;
+    text-transform:uppercase; font-size:150px; line-height:.82; letter-spacing:-.02em;
+    margin-top:26px;
+  }
+  .og[data-v="b"] h1 .r{ color:#E02A33; display:block; }
+  .og[data-v="b"] h1 .o{ -webkit-text-stroke:2px #EFEDE8; color:transparent; display:block; }
+  .og[data-v="b"] .strip{
+    background:#B4121B; margin:0 -72px; padding:20px 72px;
+    display:flex; align-items:center; gap:26px;
+    font-family:"Barlow Condensed",sans-serif; font-weight:600;
+    font-size:22px; letter-spacing:.2em; text-transform:uppercase;
+  }
+  .og[data-v="b"] .strip i{
+    width:7px; height:7px; background:currentColor; opacity:.6;
+    transform:rotate(45deg); flex:none; display:block;
+  }
+  .og[data-v="b"] .strip .sp{ margin-left:auto; }
+
+  /* ============ VARIANTE C — INFORME ============ */
+  .og[data-v="c"]{
+    background:#FBFAF8; color:#16181A;
+    font-family:"Work Sans",sans-serif; padding:64px 72px;
+  }
+  .og[data-v="c"] .eyebrow{
+    font-family:"Outfit",sans-serif; font-size:19px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:#878D94;
+    display:flex; align-items:center; gap:14px;
+  }
+  .og[data-v="c"] .eyebrow::before{ content:""; width:34px; height:2px; background:#878D94; }
+  .og[data-v="c"] h1{
+    font-family:"Outfit",sans-serif; font-weight:500;
+    font-size:82px; line-height:1.06; letter-spacing:-.035em; max-width:17ch;
+  }
+  .og[data-v="c"] h1 u{
+    text-decoration:underline; text-decoration-color:rgba(180,18,27,.34);
+    text-decoration-thickness:.055em; text-underline-offset:.16em;
+  }
+  .og[data-v="c"] .foot{
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:2px solid #E4E3DE; padding-top:24px;
+    font-family:"Outfit",sans-serif; font-size:21px; color:#5A6169;
+  }
+  .og[data-v="c"] .foot b{ color:#16181A; font-weight:600; display:inline-flex; align-items:center; gap:11px; }
+  .og[data-v="c"] .foot b::before{ content:""; width:11px; height:11px; border-radius:50%; background:#B4121B; }
+</style>
+</head>
+<body>
+
+<div class="og" id="og"></div>
+
+<script>
+var v = (new URLSearchParams(location.search).get('v') || 'b').toLowerCase();
+var og = document.getElementById('og');
+og.setAttribute('data-v', v);
+
+var plantillas = {
+  a: '<p class="kicker">Club Atlético Independiente</p>' +
+     '<h1>Volver a ser<br><em>el Rojo</em> que fuimos.</h1>' +
+     '<div class="foot"><span><b>Ruben Lapaglia</b> · Candidato a presidente</span><span>1905 · Avellaneda</span></div>',
+
+  b: '<div><p class="tag">Elecciones · Independiente</p>' +
+     '<h1>Por el<span class="r">Rojo</span><span class="o">que viene</span></h1></div>' +
+     '<div class="strip"><span>Ruben Lapaglia</span><i></i><span>Candidato a presidente</span>' +
+     '<span class="sp">Plan a 4 años</span></div>',
+
+  c: '<p class="eyebrow">Club Atlético Independiente</p>' +
+     '<h1>Un plan de gestión, <u>no una lista de promesas</u>.</h1>' +
+     '<div class="foot"><b>Ruben Lapaglia</b><span>Candidato a presidente</span></div>'
+};
+
+og.innerHTML = plantillas[v] || plantillas.b;
+document.title = 'OG ' + v.toUpperCase() + ' — 1200×630';
+</script>
+</body>
+</html>
