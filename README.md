@@ -60,7 +60,25 @@ su carácter — si alguna avanza, se le puede subir el nivel.
 
 Todo usa **sólo `transform` y `opacity`** — no dispara layout ni repaint, así que va fluido
 en celulares modestos. No hay ninguna librería: son ~90 líneas de JS sin dependencias.
-**Se apaga entero** con `prefers-reduced-motion`.
+
+### Con `prefers-reduced-motion`
+
+Aplica a las tres maquetas. Es más común de lo que parece: el **ahorro de batería de
+Samsung** lo activa solo, igual que "quitar animaciones" en Android o Windows. Por eso no
+se apaga todo — se apaga lo que marea, y se conserva lo que da respuesta:
+
+| Se apaga | Se conserva |
+|---|---|
+| Desplazamientos de los reveals | Fundidos de opacidad |
+| Barrido del título desde su máscara | Transiciones de color al hover |
+| `clip-path` de la foto | Feedback en botones y filas |
+| Barra de progreso | Cifras en su valor final |
+| Franja roja (movimiento automático) | |
+| Escalas y parallax | |
+
+El criterio: un fundido o un cambio de color **no son movimiento** para efectos de la
+pauta de accesibilidad. Apagarlos dejaba la página muerta para una porción grande de la
+audiencia real sin ganar nada a cambio.
 
 ### Editar la franja roja
 

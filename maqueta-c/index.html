@@ -259,9 +259,24 @@ footer a:hover{ color:var(--ink); text-decoration:underline; text-underline-offs
 /* ---------- reveal ---------- */
 .rv{ opacity:0; transform:translateY(14px); transition:opacity .5s var(--ease), transform .5s var(--ease); }
 .rv.in{ opacity:1; transform:none; }
+/* ============================================================
+   MOVIMIENTO REDUCIDO — punto intermedio
+   Se apaga el DESPLAZAMIENTO (que es lo que marea) y todo el
+   movimiento automático. Se CONSERVAN los fundidos de opacidad
+   y las transiciones de color, que no son movimiento: así la
+   página sigue respondiendo en vez de quedar muerta para quien
+   tiene el ahorro de batería o "quitar animaciones" activado.
+   ============================================================ */
 @media (prefers-reduced-motion: reduce){
-  .rv{ opacity:1; transform:none; transition:none; }
-  *{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+  html{ scroll-behavior:auto; }
+
+  /* el reveal aparece con fundido, sin subir */
+  .rv{ transform:none; transition:opacity .45s ease; }
+  .rv.in{ transform:none; }
+
+  /* sin desplazamientos ni escalas al hover; el borde igual reacciona */
+  .kpi:hover{ transform:none; }
+  .video:hover .video__disc{ transform:none; }
 }
 </style>
 </head>
@@ -502,7 +517,6 @@ footer a:hover{ color:var(--ink); text-decoration:underline; text-underline-offs
 <script>
 (function(){
   'use strict';
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var bar = document.getElementById('topbar');
   var onScroll = function(){
@@ -533,7 +547,7 @@ footer a:hover{ color:var(--ink); text-decoration:underline; text-underline-offs
 
 
   var items = document.querySelectorAll('.rv');
-  if (reduce || !('IntersectionObserver' in window)) {
+  if (!('IntersectionObserver' in window)) {
     items.forEach(function(el){ el.classList.add('in'); });
   } else {
     var io = new IntersectionObserver(function(entries){

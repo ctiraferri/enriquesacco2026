@@ -321,9 +321,29 @@ footer a:hover{ color:var(--bone); text-decoration:underline; text-underline-off
 /* ---------- reveal ---------- */
 .rv{ opacity:0; transform:translateY(16px); transition:opacity .6s var(--ease), transform .6s var(--ease); }
 .rv.in{ opacity:1; transform:none; }
+/* ============================================================
+   MOVIMIENTO REDUCIDO — punto intermedio
+   Se apaga el DESPLAZAMIENTO (que es lo que marea) y todo el
+   movimiento automático. Se CONSERVAN los fundidos de opacidad
+   y las transiciones de color, que no son movimiento: así la
+   página sigue respondiendo en vez de quedar muerta para quien
+   tiene el ahorro de batería o "quitar animaciones" activado.
+   ============================================================ */
 @media (prefers-reduced-motion: reduce){
-  .rv{ opacity:1; transform:none; transition:none; }
-  *{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+  html{ scroll-behavior:auto; }
+
+  /* el reveal aparece con fundido, sin subir */
+  .rv{ transform:none; transition:opacity .45s ease; }
+  .rv.in{ transform:none; }
+
+  /* el subrayado del nav funde en vez de barrer */
+  .nav a::after{ transform:scaleX(1); opacity:0; transition:opacity .25s ease; }
+  .nav a:hover::after, .nav a:focus-visible::after{ opacity:1; }
+
+  /* sin desplazamientos ni escalas al hover */
+  .num{ transition:none; }
+  .eje:hover .num{ transform:none; }
+  .video:hover .video__disc{ transform:none; }
 }
 </style>
 </head>
@@ -562,7 +582,6 @@ footer a:hover{ color:var(--bone); text-decoration:underline; text-underline-off
 <script>
 (function(){
   'use strict';
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* borde de la barra al scrollear */
   var bar = document.getElementById('topbar');
@@ -595,7 +614,7 @@ footer a:hover{ color:var(--bone); text-decoration:underline; text-underline-off
 
   /* reveal progresivo */
   var items = document.querySelectorAll('.rv');
-  if (reduce || !('IntersectionObserver' in window)) {
+  if (!('IntersectionObserver' in window)) {
     items.forEach(function(el){ el.classList.add('in'); });
   } else {
     var io = new IntersectionObserver(function(entries){
