@@ -1,14 +1,14 @@
-# One-page de campaña
+# Quique Sacco 2026 — One-page de campaña
 
-Landing institucional para un candidato a presidente de un club de fútbol.
-Sitio 100% estático, sin build, sin dependencias: se publica tal cual en GitHub Pages.
+Landing institucional de la candidatura de Quique Sacco a presidente del Club Atlético
+Independiente. Sitio 100% estático, sin build, sin dependencias: se publica tal cual en
+GitHub Pages.
 
-> ### ⚠️ El nombre que figura es un alias
+**Online:** https://ctiraferri.github.io/enriquesacco2026/
+
+> ### ⚠️ El contenido todavía es de ejemplo
 >
-> Todo el material usa **"Ruben Lapaglia"** como nombre de trabajo. **No es el candidato
-> real.** Se reemplaza recién en la versión final, junto con el resto del contenido.
->
-> El contenido también es de ejemplo: lo que está entre corchetes `[así]` son datos que
+> Textos, fotos y datos son de muestra. Lo que está entre corchetes `[así]` son datos que
 > hay que verificar antes de publicar.
 
 ---
@@ -99,7 +99,6 @@ El `.nojekyll` ya está incluido (evita que GitHub procese el sitio con Jekyll).
 ## Qué falta antes de publicar de verdad
 
 ### Contenido
-- [ ] **Reemplazar el alias "Ruben Lapaglia" por el nombre real**
 - [ ] Bio real (los párrafos de ejemplo)
 - [ ] Los seis ejes / compromisos con su redacción definitiva
 - [ ] Todos los `[corchetes]`: fecha de elección, número de lista, nombres del equipo
@@ -129,8 +128,8 @@ Es una *fachada*: la página **no** carga nada de YouTube hasta el click. Evita 
 descarga y los cookies de tracking en la carga inicial.
 
 ### Imagen para redes
-`assets/og.jpg`, 1200×630. **Lleva el alias impreso**, así que hay que regenerarla al
-poner el nombre real — ver `tools/generar-og.md`.
+`assets/og.jpg`, 1200×630. **El texto está impreso en la imagen**: si cambia el nombre o
+el claim, no alcanza con editar el HTML, hay que regenerarla — ver `tools/generar-og.md`.
 
 `og:image` y `og:url` ya usan la URL **absoluta** de GitHub Pages, así que el link
 compartido por WhatsApp sale con vista previa. **Si se pasa a dominio propio, hay que
