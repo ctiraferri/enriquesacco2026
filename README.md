@@ -1,4 +1,4 @@
-# One-page de campaña — tres direcciones de diseño
+# One-page de campaña
 
 Landing institucional para un candidato a presidente de un club de fútbol.
 Sitio 100% estático, sin build, sin dependencias: se publica tal cual en GitHub Pages.
@@ -13,15 +13,15 @@ Sitio 100% estático, sin build, sin dependencias: se publica tal cual en GitHub
 
 ---
 
-## Las tres maquetas
+## Dirección de diseño: Bloques
 
-| | Dirección | Identidad del club | Tipografía | Cuándo conviene |
-|---|---|---|---|---|
-| **A** | [Editorial](maqueta-a/) | Alusión, no calco. Rojo solo en numerales y acentos, sobre papel hueso | Libre Bodoni + Public Sans | Se quiere gravedad institucional y diferenciarse del ruido rojo |
-| **B** | [Bloques](maqueta-b/) | Explícita. Rojo profundo en campos planos, sin gradientes | Barlow Condensed + Barlow | Se prioriza reconocimiento inmediato y energía de hinchada |
-| **C** | [Informe](maqueta-c/) | Casi neutra. El rojo aparece dos veces en toda la página | Outfit + Work Sans | Se quiere leer como gestión seria y no como página de hincha |
+Identidad del club explícita: rojo profundo en campos planos, sin gradientes. Condensada
+gigante, franja de ticker, filas que se llenan de color. Tipografía **Barlow Condensed +
+Barlow**. Todo el sitio es `index.html`.
 
-El índice en `index.html` las muestra las tres juntas, con paleta y riesgo de cada una.
+Se exploraron otras dos direcciones (A · Editorial y C · Informe) y se descartaron a favor
+de esta. Quedan en el historial de git, en el commit `e1b075f`, por si hace falta rescatar
+algo. El link viejo `/maqueta-b/` redirige a la home.
 
 ---
 
@@ -44,10 +44,7 @@ compartir necesitan `http://` para andar.
 
 ---
 
-## El movimiento de la maqueta B
-
-B tiene un sistema de animación propio. Las otras dos mantienen un reveal sobrio, acorde a
-su carácter — si alguna avanza, se le puede subir el nivel.
+## El movimiento
 
 | Qué | Cómo |
 |---|---|
@@ -63,7 +60,7 @@ en celulares modestos. No hay ninguna librería: son ~90 líneas de JS sin depen
 
 ### Con `prefers-reduced-motion`
 
-Aplica a las tres maquetas. Es más común de lo que parece: el **ahorro de batería de
+Es más común de lo que parece: el **ahorro de batería de
 Samsung** lo activa solo, igual que "quitar animaciones" en Android o Windows. Por eso no
 se apaga todo — se apaga lo que marea, y se conserva lo que da respuesta:
 
@@ -114,8 +111,8 @@ Reemplazar los archivos en `assets/` manteniendo el nombre, o cambiar el `src` e
 
 | Placeholder | Se usa para | Proporción |
 |---|---|---|
-| `placeholder-retrato.svg` | Retrato del hero (A y B) | 3:4 |
-| `placeholder-wide.svg` | Hero de C y poster del video | 16:9 |
+| `placeholder-retrato.svg` | Retrato del hero | 3:4 |
+| `placeholder-wide.svg` | Poster del video | 16:9 |
 | `placeholder-cuadrado.svg` | Fotos del equipo | 1:1 |
 | `placeholder-logo.svg` | Logo de campaña en el footer | ~3:1 |
 
@@ -132,16 +129,16 @@ Es una *fachada*: la página **no** carga nada de YouTube hasta el click. Evita 
 descarga y los cookies de tracking en la carga inicial.
 
 ### Imagen para redes
-`assets/og-a.jpg`, `og-b.jpg` y `og-c.jpg`, 1200×630. Cada maqueta apunta a la suya.
-**Llevan el alias impreso**, así que hay que regenerarlas al poner el nombre real —
-ver `tools/generar-og.md`.
+`assets/og.jpg`, 1200×630. **Lleva el alias impreso**, así que hay que regenerarla al
+poner el nombre real — ver `tools/generar-og.md`.
 
-Al publicar, cambiar `og:image` por la URL **absoluta**: las rutas relativas no las leen
-los scrapers de WhatsApp, Instagram ni X.
+`og:image` y `og:url` ya usan la URL **absoluta** de GitHub Pages, así que el link
+compartido por WhatsApp sale con vista previa. **Si se pasa a dominio propio, hay que
+cambiar las dos.**
 
 ### Al publicar, borrar
 - [ ] El `<div class="mockup-badge">` y su CSS (el cartel "MAQUETA · contenido de ejemplo")
-- [ ] `<meta name="robots" content="noindex, nofollow">` de cada página
+- [ ] `<meta name="robots" content="noindex, nofollow">` de `index.html`
 - [ ] `robots.txt` — hoy bloquea a todos los buscadores a propósito
 - [ ] Opcional: la carpeta `tools/`
 
@@ -149,7 +146,7 @@ los scrapers de WhatsApp, Instagram ni X.
 
 ## Decisiones técnicas
 
-- **Sin frameworks ni build.** Un `.html` autocontenido por maqueta, CSS y JS inline.
+- **Sin frameworks ni build.** Un solo `index.html` autocontenido, CSS y JS inline.
 - **Mobile-first**, verificado a 375 px y 1440 px: sin scroll horizontal y con todos los
   targets táctiles en 44 px o más.
 - **Accesibilidad**: `lang="es-AR"`, skip link, foco visible, jerarquía de headings
@@ -165,6 +162,6 @@ los scrapers de WhatsApp, Instagram ni X.
 ## Nota legal
 
 El escudo, el nombre y los signos distintivos del club son marcas registradas de la
-institución. Las maquetas A y C no los utilizan. La maqueta B se apoya en la paleta del
-club: si se elige esa dirección, conviene chequear el uso de identidad antes de publicar.
-Las tres llevan en el footer la aclaración de que es un sitio no oficial.
+institución. El sitio no usa el escudo, pero se apoya en la paleta del club: conviene
+chequear el uso de identidad antes de publicar. El footer aclara que es un sitio no
+oficial.
