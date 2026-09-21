@@ -162,8 +162,10 @@ h1,h2,h3,.cond{
 .hero__grid{ display:grid; gap:var(--s-4); }
 @media (min-width:920px){ .hero__grid{ grid-template-columns:1fr .78fr; gap:var(--s-5); align-items:end; } }
 
+.hero__text{ container-type:inline-size; }
 .hero h1{
-  font-size:clamp(54px,11.4vw,142px);
+  font-size:clamp(40px,7.5vw,100px);   /* respaldo para navegadores sin container queries */
+  font-size:min(142px,17cqi);          /* atado al ancho de la columna: "Independiente," entra entero */
   line-height:.82; letter-spacing:-.02em;
   margin-block:var(--s-3) var(--s-3);
 }
@@ -452,12 +454,13 @@ footer a:hover{ color:var(--hueso); }
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="hero">
     <div class="wrap hero__grid">
-      <div>
+      <div class="hero__text">
         <p class="tag rv">Elecciones · Independiente · [fecha]</p>
         <h1>
-          <span class="ln"><i>Por el</i></span>
-          <span class="ln l2"><i>Rojo</i></span>
-          <span class="ln l3"><i>que viene</i></span>
+          <span class="ln"><i>Por un nuevo</i></span>
+          <span class="ln l2"><i>Independiente,</i></span>
+          <span class="ln l3"><i>¡Para volver</i></span>
+          <span class="ln l3"><i>a ganar!</i></span>
         </h1>
         <p class="lede rv">
           Cuatro años de gestión con plan, plazos y números a la vista.
