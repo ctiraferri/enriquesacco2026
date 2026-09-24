@@ -300,19 +300,22 @@ section{ padding-block:clamp(56px,8vw,var(--s-6)); }
   overflow:hidden; font:inherit; color:inherit; text-align:left;
 }
 .video img{
-  width:100%; height:100%; object-fit:cover; opacity:.5; filter:grayscale(1);
-  transition:transform .8s var(--out), opacity .5s var(--ease);
+  width:100%; height:100%; object-fit:cover;
+  transition:transform .8s var(--out);
 }
-.video:hover img{ transform:scale(1.04); opacity:.35; }
+.video:hover img{ transform:scale(1.04); }
 .video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
-.video__play{ position:absolute; inset:0; display:grid; place-items:center; gap:var(--s-2); grid-auto-flow:row; }
+/* el botón va abajo de la mitad (arriba está la cara) y por encima del subtítulo de la miniatura */
+.video__play{ position:absolute; left:0; right:0; top:50%; bottom:24%; display:grid; place-items:center; }
 .video__disc{
-  position:relative; width:84px; height:84px; background:var(--rojo);
+  position:relative; width:clamp(44px,9vw,84px); aspect-ratio:1; border-radius:50%;
+  background:var(--rojo); border:2px solid var(--hueso);
+  box-shadow:0 6px 24px rgb(0 0 0 / .45);
   display:grid; place-items:center;
   transition:transform .4s var(--out), background .3s var(--ease);
 }
 .video__disc::after{
-  content:""; position:absolute; inset:0; border:1px solid var(--rojo-hi);
+  content:""; position:absolute; inset:-2px; border-radius:50%; border:2px solid var(--hueso);
   transform:scale(1); opacity:0;
 }
 .video:hover .video__disc{ transform:scale(1.08); background:var(--rojo-hi); }
@@ -321,8 +324,8 @@ section{ padding-block:clamp(56px,8vw,var(--s-6)); }
   from{ transform:scale(1);   opacity:.9; }
   to  { transform:scale(1.7); opacity:0;  }
 }
-.video__disc svg{ width:28px; height:28px; fill:var(--hueso); margin-left:5px; }
-.video__label{ font-family:var(--cond); font-weight:600; font-size:15px; letter-spacing:.2em; text-transform:uppercase; }
+.video__disc svg{ width:40%; height:40%; fill:var(--hueso); margin-left:8%; }
+.video__label{ position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; font-family:var(--cond); font-weight:600; font-size:15px; letter-spacing:.2em; text-transform:uppercase; }
 
 /* ---------- equipo ---------- */
 .team{ display:grid; gap:1px; background:var(--black-3); grid-template-columns:repeat(2,1fr); }
