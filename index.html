@@ -235,8 +235,14 @@ section{ padding-block:clamp(56px,8vw,var(--s-6)); }
 
 /* ---------- bio ---------- */
 .bio{ display:grid; gap:var(--s-4); }
-@media (min-width:920px){ .bio{ grid-template-columns:1fr 1fr; gap:var(--s-5); } }
+/* en escritorio: formación y gestión a la izquierda, trayectoria (el bloque largo) a la derecha */
+@media (min-width:920px){
+  .bio{ grid-template-columns:1fr 1fr; grid-template-rows:auto 1fr; gap:var(--s-4) var(--s-5); }
+  .bio__b--largo{ grid-column:2; grid-row:1 / span 2; }
+}
+.bio h3{ margin-bottom:var(--s-2); }
 .bio p{ margin:0 0 1.1em; color:#C9C6C0; }
+.bio p:last-child{ margin-bottom:0; }
 .bio p strong{ color:var(--hueso); }
 
 /* ---------- cifras ---------- */
@@ -508,19 +514,29 @@ footer a:hover{ color:var(--hueso); }
       </div>
 
       <div class="bio">
-        <!-- TEXTO DE EJEMPLO — reemplazar por la bio real -->
-        <div class="rv">
-          <p><strong>Texto de ejemplo.</strong> Acá va la biografía del candidato: de dónde viene,
-          cuál es su vínculo con el club y qué lo trajo hasta esta candidatura. Conviene abrir con
-          una escena concreta antes que con un currículum.</p>
-          <p>El segundo párrafo desarrolla la trayectoria profesional y la experiencia de gestión
-          que respalda la propuesta.</p>
+        <div class="bio__b rv">
+          <h3 class="tag">Formación académica</h3>
+          <p>Estudió Periodismo y Letras en la Universidad de Buenos Aires (UBA).</p>
         </div>
-        <div class="rv">
-          <p>Si hay antecedentes verificables en el club o en otras instituciones, este es el lugar:
-          son el principal argumento de credibilidad de toda la pieza.</p>
-          <p><strong>[Dato a confirmar]</strong> — cualquier cifra, fecha o antecedente concreto
-          debe verificarse antes de publicar.</p>
+        <div class="bio__b bio__b--largo rv">
+          <h3 class="tag">Trayectoria profesional</h3>
+          <p>Cuenta con una extensa trayectoria en medios de comunicación, donde se desempeñó como
+          periodista, productor y ejecutivo.</p>
+          <p>Obtuvo 8 Martín Fierro por <em>La Oral Deportiva</em> como mejor programa deportivo.
+          Durante 10 años, fue miembro del jurado y único periodista argentino en votar para el
+          Ballon d’Or.</p>
+          <p>Trabajó en ESPN como periodista y ejecutivo, y en TNT Sports / Warner Bros. como Head of
+          Sports liderando la gestión del negocio, los derechos audiovisuales y la integración de
+          contenidos en múltiples plataformas, acompañando la evolución del periodismo deportivo.</p>
+          <p>Autor del libro <em>Mucho más que fútbol</em> (2015), dedicado a la gestión y al
+          desarrollo del fútbol.</p>
+        </div>
+        <div class="bio__b rv">
+          <h3 class="tag">Experiencia en gestión del fútbol</h3>
+          <p>Se desempeñó como ejecutivo de la Superliga Argentina de Fútbol y participó en la
+          implementación de la distribución equitativa de los ingresos provenientes de los derechos
+          de televisión, del control económico-financiero y de iniciativas vinculadas al fútbol
+          juvenil, entre ellas el denominado “tercer tiempo”.</p>
         </div>
       </div>
     </div>
