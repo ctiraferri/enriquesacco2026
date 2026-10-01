@@ -2,3 +2,5 @@
 *.log
 .DS_Store
 Thumbs.db
+# original del retrato (7 MB): el sitio usa assets/retrato.jpg
+Quique 21.JPG
