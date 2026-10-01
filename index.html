@@ -263,7 +263,7 @@ section{ padding-block:clamp(56px,8vw,var(--s-6)); }
 .ejes{ border-top:1px solid var(--black-3); }
 .eje{
   position:relative; isolation:isolate;
-  display:grid; gap:6px;
+  display:grid; gap:10px;
   padding:var(--s-4) var(--s-3);
   border-bottom:1px solid var(--black-3);
   transition:padding-left .45s var(--out);
@@ -286,6 +286,7 @@ section{ padding-block:clamp(56px,8vw,var(--s-6)); }
 }
 .eje h3{ font-size:clamp(26px,3.4vw,38px); }
 .eje p{ margin:0; color:var(--gris); font-size:16px; transition:color .4s var(--ease); }
+.eje p + p{ margin-top:.9em; }
 
 /* ---------- bloque rojo a sangre ---------- */
 .block-red{ background:var(--rojo); color:var(--hueso); }
@@ -546,7 +547,7 @@ footer a:hover{ color:var(--hueso); }
   <section style="padding-top:0;">
     <div class="wrap">
       <div class="stats">
-        <div class="stat rv"><b data-count="6">0</b><span>Ejes de gestión</span></div>
+        <div class="stat rv"><b data-count="7">0</b><span>Ejes de gestión</span></div>
         <div class="stat rv"><b data-count="4">0</b><span>Años de plan</span></div>
         <div class="stat rv"><b data-count="100" data-suffix="%">0</b><span>Balances públicos</span></div>
         <div class="stat rv"><b>[ ]</b><span>Dato a definir</span></div>
@@ -560,18 +561,19 @@ footer a:hover{ color:var(--hueso); }
       <div class="sec-head">
         <p class="tag rv">02 — El plan</p>
         <h2>
-          <span class="ln"><i>Seis ejes</i></span>
+          <span class="ln"><i>Siete ejes</i></span>
           <span class="ln"><i>de gestión</i></span>
         </h2>
       </div>
 
       <div class="ejes">
-        <article class="eje rv"><span class="eje__n">01</span><h3>Transparencia</h3><p>Balances en tiempo y forma, auditoría externa y un portal donde cualquier socio vea en qué se gasta cada peso.</p></article>
-        <article class="eje rv"><span class="eje__n">02</span><h3>Fútbol profesional</h3><p>Un proyecto deportivo con criterio y continuidad, que deje de improvisar cada seis meses.</p></article>
-        <article class="eje rv"><span class="eje__n">03</span><h3>Inferiores</h3><p>Volver a producir jugadores propios: inversión sostenida en juveniles, infraestructura y formación.</p></article>
-        <article class="eje rv"><span class="eje__n">04</span><h3>El socio</h3><p>Atención que funcione, beneficios reales y participación efectiva en las decisiones.</p></article>
-        <article class="eje rv"><span class="eje__n">05</span><h3>Infraestructura</h3><p>Plan de obras priorizado y con plazos públicos para el estadio, el predio y las sedes.</p></article>
-        <article class="eje rv"><span class="eje__n">06</span><h3>Deporte social</h3><p>El club como institución: disciplinas amateur y presencia real en Avellaneda.</p></article>
+        <article class="eje rv"><span class="eje__n">01</span><h3>El área deportiva es prioridad</h3><div class="eje__txt"><p>Hace más de un año que venimos trabajando con un equipo muy capaz en un proyecto serio, con planificación y una gestión profesional para el club. Hay ejes que son muy importantes: el área deportiva como primera prioridad. Independiente es un grande y tiene que ser competitivo siempre. Segundo, pero en el mismo plano, la economía. Independiente tiene 35 millones de deuda, de los cuales 21 son exigibles en el corto plazo. El club necesita financiamiento, inversiones y cuidar el dinero. Y por último, tenemos que modernizar y digitalizar al club, empezando por la experiencia del socio. Independiente tiene que volver a ganar.</p></div></article>
+        <article class="eje rv"><span class="eje__n">02</span><h3>Financiamiento</h3><div class="eje__txt"><p>Si no hubiera tenido una posibilidad concreta de Fondos para este proyecto, no hubiera competido, porque no se puede entrar a dirigir este club sin la posibilidad económica de hacerlo. Cuento con dos Fondos, uno de Estados Unidos y otro de Europa, sin ningún tipo de condicionamiento para Independiente. Y es dinero que el socio va a conocer de forma transparente y responsable. La transparencia es un valor clave. Por eso, lo primero que vamos a hacer cuando lleguemos va a ser auditar todo lo que se hizo.</p></div></article>
+        <article class="eje rv"><span class="eje__n">03</span><h3>Profesionalismo</h3><div class="eje__txt"><p>Tenemos que tener un equipo profesional y con experiencia, que gestione y que no improvise. Estos años hubo mucha desidia. Me da mucha bronca que, por ejemplo, por no actuar cuando se debe, Independiente termina a la larga pagando mucho más y se ve dañada su reputación. Pareciera que nadie está mirando los números, necesitamos un equipo profesional que se ocupe de esta realidad. Con una estructura económica clara.</p></div></article>
+        <article class="eje rv"><span class="eje__n">04</span><h3>Los ídolos</h3><div class="eje__txt"><p>El club tiene figuras que fueron, son y serán los ídolos de Independiente. En ningún caso quiero exponerlos en la campaña porque terminan las elecciones y siguen siendo ídolos. Esta no es una campaña centrada en ídolos. Una vez pasada la campaña, siempre van a tener lugar para seguir aportando al club.</p></div></article>
+        <article class="eje rv"><span class="eje__n">05</span><h3>No a la SAD</h3><div class="eje__txt"><p>Mi compromiso formal y ante escribano es que Independiente no será una SAD, seguirá siendo el Club Atlético Independiente. Orgullo nacional.</p></div></article>
+        <article class="eje rv"><span class="eje__n">06</span><h3>Las inferiores son una prioridad</h3><div class="eje__txt"><p>Si no miramos las divisiones inferiores, poniéndole inversión desde lo formativo, técnico y en lo relacionado a la educación, no vamos a tener éxito a largo plazo. Esa será una de nuestras prioridades. Tenemos que hacer las cosas diferente.</p></div></article>
+        <article class="eje rv"><span class="eje__n">07</span><h3>Alianzas</h3><div class="eje__txt"><p>Nosotros tenemos un proyecto y un equipo que tiene como objetivo ganar las elecciones. No estamos dispuestos a negociar ni a condicionar nuestras ideas, pero si alguien está dispuesto a sumarse para enriquecerlas, siempre bienvenido.</p><p>Mientras más candidatos participen de las elecciones mejor, el socio tiene que involucrarse también. Nosotros tenemos claro cuál es nuestro proyecto, qué Independiente queremos construir y cómo lo queremos construir.</p></div></article>
       </div>
     </div>
   </section>

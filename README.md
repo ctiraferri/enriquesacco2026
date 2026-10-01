@@ -99,8 +99,8 @@ El `.nojekyll` ya está incluido (evita que GitHub procese el sitio con Jekyll).
 ## Qué falta antes de publicar de verdad
 
 ### Contenido
-- [ ] Bio real (los párrafos de ejemplo)
-- [ ] Los seis ejes / compromisos con su redacción definitiva
+- [x] Bio real (los párrafos de ejemplo)
+- [x] Los siete ejes / compromisos con su redacción definitiva
 - [ ] Todos los `[corchetes]`: fecha de elección, número de lista, nombres del equipo
 - [ ] La cita destacada, con acto y fecha reales
 - [ ] Links de redes en el footer (hoy apuntan a `#`)
