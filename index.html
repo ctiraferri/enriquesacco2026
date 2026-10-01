@@ -25,7 +25,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
@@ -49,8 +49,8 @@
   --rojo-2:  #8E0E15;
   --rojo-hi: #E02A33;
 
-  --cond: "Barlow Condensed", "Arial Narrow", sans-serif;
-  --sans: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --display: "Anton", Impact, "Arial Narrow", sans-serif;   /* títulos fuertes — Anton trae un solo peso (400) */
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --page: 1280px;
   --gutter: clamp(20px, 5vw, 56px);
@@ -96,6 +96,7 @@ a{ color:inherit; }
 .ln{
   display:block; overflow:hidden;
   padding-bottom:.08em; margin-bottom:-.08em;   /* que no corte trazos ni descendentes */
+  padding-top:.22em; margin-top:-.22em;         /* ni las tildes de las mayúsculas (Anton es alta) */
 }
 .ln > i{
   display:block; font-style:normal;
@@ -114,12 +115,12 @@ a{ color:inherit; }
 
 /* ---------- tipografía ---------- */
 h1,h2,h3,.cond{
-  font-family:var(--cond); font-weight:700;
+  font-family:var(--display); font-weight:400;
   text-transform:uppercase; letter-spacing:-.005em;
-  line-height:.92; margin:0; text-wrap:balance;
+  line-height:1.04; margin:0; text-wrap:balance;
 }
 .tag{
-  display:inline-block; font-family:var(--cond); font-weight:600;
+  display:inline-block; font-family:var(--sans); font-weight:600;
   font-size:13px; letter-spacing:.2em; text-transform:uppercase;
   color:var(--rojo-hi); border-left:3px solid var(--rojo);
   padding-left:10px; line-height:1.3;
@@ -136,7 +137,7 @@ h1,h2,h3,.cond{
 .topbar.is-stuck{ border-bottom-color:var(--black-3); }
 .topbar__in{ display:flex; align-items:center; justify-content:space-between; min-height:62px; gap:var(--s-3); }
 .brand{
-  font-family:var(--cond); font-weight:700; font-size:22px; text-transform:uppercase;
+  font-family:var(--display); font-weight:400; font-size:22px; text-transform:uppercase;
   letter-spacing:.02em; text-decoration:none;
   display:inline-flex; align-items:center; min-height:44px;
 }
@@ -144,7 +145,7 @@ h1,h2,h3,.cond{
 .nav{ display:none; gap:var(--s-4); }
 @media (min-width:900px){ .nav{ display:flex; } }
 .nav a{
-  font-family:var(--cond); font-weight:600; font-size:15px;
+  font-family:var(--sans); font-weight:600; font-size:15px;
   letter-spacing:.14em; text-transform:uppercase;
   text-decoration:none; color:var(--gris);
   position:relative; padding:4px 0; transition:color .25s var(--ease);
@@ -166,7 +167,7 @@ h1,h2,h3,.cond{
 .hero h1{
   font-size:clamp(40px,7.5vw,100px);   /* respaldo para navegadores sin container queries */
   font-size:min(142px,17cqi);          /* atado al ancho de la columna: "Independiente," entra entero */
-  line-height:.82; letter-spacing:-.02em;
+  line-height:.98; letter-spacing:0;
   margin-block:var(--s-3) var(--s-3);
 }
 .hero h1 .l2 > i{ color:var(--rojo-hi); }
@@ -214,7 +215,7 @@ h1,h2,h3,.cond{
 .strip__group{
   display:flex; align-items:center; flex:none;
   padding-block:14px;
-  font-family:var(--cond); font-weight:600;
+  font-family:var(--sans); font-weight:600;
   font-size:15px; letter-spacing:.2em; text-transform:uppercase;
   white-space:nowrap;
 }
@@ -243,7 +244,7 @@ section{ padding-block:clamp(56px,8vw,var(--s-6)); }
 @media (min-width:820px){ .stats{ grid-template-columns:repeat(4,1fr); } }
 .stat{ background:var(--black); padding:var(--s-4) var(--s-3); }
 .stat b{
-  display:block; font-family:var(--cond); font-weight:700;
+  display:block; font-family:var(--display); font-weight:400;
   font-size:clamp(48px,7vw,80px); line-height:.9; color:var(--rojo-hi);
   font-variant-numeric:tabular-nums;
 }
@@ -274,7 +275,7 @@ section{ padding-block:clamp(56px,8vw,var(--s-6)); }
 .eje:hover .eje__n{ color:var(--hueso); }
 .eje:hover p{ color:rgba(239,237,232,.9); }
 .eje__n{
-  font-family:var(--cond); font-weight:700; font-size:clamp(34px,5vw,52px);
+  font-family:var(--display); font-weight:400; font-size:clamp(34px,5vw,52px);
   line-height:1; color:var(--rojo-hi); transition:color .4s var(--ease);
 }
 .eje h3{ font-size:clamp(26px,3.4vw,38px); }
@@ -283,12 +284,12 @@ section{ padding-block:clamp(56px,8vw,var(--s-6)); }
 /* ---------- bloque rojo a sangre ---------- */
 .block-red{ background:var(--rojo); color:var(--hueso); }
 .block-red blockquote{
-  margin:var(--s-3) 0 0; font-family:var(--cond); font-weight:700; text-transform:uppercase;
-  font-size:clamp(34px,7vw,92px); line-height:.94; letter-spacing:-.01em; max-width:16ch;
+  margin:var(--s-3) 0 0; font-family:var(--display); font-weight:400; text-transform:uppercase;
+  font-size:clamp(34px,7vw,92px); line-height:1.04; letter-spacing:0; max-width:24ch;
 }
 .block-red .tag{ color:rgba(239,237,232,.85); border-color:rgba(239,237,232,.5); }
 .block-red figcaption{
-  margin-top:var(--s-3); font-family:var(--cond); font-weight:500;
+  margin-top:var(--s-3); font-family:var(--sans); font-weight:500;
   font-size:14px; letter-spacing:.18em; text-transform:uppercase;
   color:rgba(239,237,232,.75);
 }
@@ -325,7 +326,7 @@ section{ padding-block:clamp(56px,8vw,var(--s-6)); }
   to  { transform:scale(1.7); opacity:0;  }
 }
 .video__disc svg{ width:40%; height:40%; fill:var(--hueso); margin-left:8%; }
-.video__label{ position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; font-family:var(--cond); font-weight:600; font-size:15px; letter-spacing:.2em; text-transform:uppercase; }
+.video__label{ position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; font-family:var(--sans); font-weight:600; font-size:15px; letter-spacing:.2em; text-transform:uppercase; }
 
 /* ---------- equipo ---------- */
 .team{ display:grid; gap:1px; background:var(--black-3); grid-template-columns:repeat(2,1fr); }
@@ -345,7 +346,7 @@ section{ padding-block:clamp(56px,8vw,var(--s-6)); }
   position:relative; overflow:hidden;
   display:inline-flex; align-items:center; gap:10px;
   min-height:50px; padding:0 26px;
-  font-family:var(--cond); font-weight:600; font-size:16px;
+  font-family:var(--sans); font-weight:600; font-size:16px;
   letter-spacing:.16em; text-transform:uppercase;
   text-decoration:none; cursor:pointer; border:2px solid var(--hueso);
   background:transparent; color:var(--hueso);
@@ -381,7 +382,7 @@ footer a:hover{ color:var(--hueso); }
 .mockup-badge{
   position:fixed; right:12px; bottom:12px; z-index:150;
   background:var(--rojo); color:var(--hueso);
-  font-family:var(--cond); font-weight:600;
+  font-family:var(--sans); font-weight:600;
   font-size:12px; letter-spacing:.16em; text-transform:uppercase;
   padding:7px 12px; opacity:.9;
 }
