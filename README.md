@@ -23,6 +23,10 @@ Se exploraron otras dos direcciones (A · Editorial y C · Informe) y se descart
 de esta. Quedan en el historial de git, en el commit `e1b075f`, por si hace falta rescatar
 algo. El link viejo `/maqueta-b/` redirige a la home.
 
+`/propuestas/` es una landing aparte con los diez ejes (encabezado, índice y ejes completos).
+El texto de los ejes está duplicado ahí y en la sección *El plan* de la home: si se edita
+uno, hay que editar los dos.
+
 ---
 
 ## Ver en local
