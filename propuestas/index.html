@@ -159,7 +159,11 @@ section{ padding-block:clamp(56px,8vw,var(--s-6)); }
 .head h1{ font-size:clamp(56px,11vw,150px); line-height:.98; letter-spacing:0; margin-block:var(--s-3); }
 .head h1 .l2 > i{ color:var(--rojo-hi); }
 .head__grid{ display:grid; gap:var(--s-4); }
-@media (min-width:920px){ .head__grid{ grid-template-columns:1fr .62fr; gap:var(--s-5); align-items:end; } }
+/* en escritorio la foto va a la izquierda, al 85% de su columna; en el celular sigue debajo del título */
+@media (min-width:920px){
+  .head__grid{ grid-template-columns:.62fr 1fr; gap:var(--s-5); align-items:end; }
+  .head__photo{ order:-1; width:85%; }
+}
 
 /* foto: mismo revelado que el retrato de la home (clip-path + bloque rojo que barre) */
 .head__photo{ position:relative; margin:0; }
