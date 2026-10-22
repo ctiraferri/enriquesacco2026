@@ -145,7 +145,9 @@ cambiar las dos.**
 - [x] `robots.txt` — ahora permite indexar y apunta a `sitemap.xml`
 
 ### Buscadores
-- `sitemap.xml` lista las páginas: si se agrega una, sumarla ahí.
+- `sitemap.xml` lista las páginas indexables: si se agrega una, sumarla ahí.
+- `/propuestas/` es la landing para pauta y queda **fuera de los buscadores** a propósito
+  (`noindex` y fuera del sitemap): repite los ejes de la home, que es la que tiene que posicionar.
 - Cada página tiene `canonical` y datos estructurados (JSON-LD) con la persona y sus redes.
   Si cambia una red social, actualizarla también en el JSON-LD de `index.html`.
 - [ ] Opcional: la carpeta `tools/`
