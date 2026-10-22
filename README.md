@@ -4,7 +4,7 @@ Landing institucional de la candidatura de Quique Sacco a presidente del Club At
 Independiente. Sitio 100% estático, sin build, sin dependencias: se publica tal cual en
 GitHub Pages.
 
-**Online:** https://ctiraferri.github.io/enriquesacco2026/
+**Online:** https://enriquesacco.com.ar/ (GitHub Pages con dominio propio; el DNS está en Cloudflare, en modo "DNS only")
 
 > ### ⚠️ El contenido todavía es de ejemplo
 >
