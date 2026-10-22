@@ -141,8 +141,13 @@ cambiar las dos.**
 
 ### Al publicar, borrar
 - [ ] El `<div class="mockup-badge">` y su CSS (el cartel "MAQUETA · contenido de ejemplo")
-- [ ] `<meta name="robots" content="noindex, nofollow">` de `index.html`
-- [ ] `robots.txt` — hoy bloquea a todos los buscadores a propósito
+- [x] `<meta name="robots" content="noindex, nofollow">` de las páginas (sólo queda en `/maqueta-b/`, que redirige)
+- [x] `robots.txt` — ahora permite indexar y apunta a `sitemap.xml`
+
+### Buscadores
+- `sitemap.xml` lista las páginas: si se agrega una, sumarla ahí.
+- Cada página tiene `canonical` y datos estructurados (JSON-LD) con la persona y sus redes.
+  Si cambia una red social, actualizarla también en el JSON-LD de `index.html`.
 - [ ] Opcional: la carpeta `tools/`
 
 ---
