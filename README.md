@@ -1,6 +1,6 @@
-# Quique Sacco 2026 — One-page de campaña
+# Enrique Sacco 2026 — One-page de campaña
 
-Landing institucional de la candidatura de Quique Sacco a presidente del Club Atlético
+Landing institucional de la candidatura de Enrique Sacco a presidente del Club Atlético
 Independiente. Sitio 100% estático, sin build, sin dependencias: se publica tal cual en
 GitHub Pages.
 
