@@ -164,8 +164,13 @@ cambiar las dos.**
 - **Reveals a prueba de anclas**: si alguien entra por `#equipo` o recarga a mitad de
   página, un barrido revela lo que quedó fuera del alcance del observer. Sin eso esas
   secciones quedarían invisibles — es un bug clásico de este patrón.
-- **Peso**: la única request externa es Google Fonts. Sin analytics, sin cookies,
-  sin banner de consentimiento.
+- **Peso**: las requests externas son Google Fonts y Cloudflare Web Analytics.
+  Analytics no usa cookies, así que no hace falta banner de consentimiento. Mide visitas
+  a las páginas, no descargas del PDF. Se consulta en dash.cloudflare.com → Web Analytics.
+- **Programa en PDF**: `assets/enrique-sacco-programa-2026-2030.pdf` (2 MB). Es el
+  original de la raíz (3 MB, ignorado) optimizado sin pérdida. Lo enlazan la home y
+  `/propuestas/`. Si sale una versión nueva, reemplazar ese archivo con el mismo nombre
+  y actualizar "34 páginas · 2 MB" en los dos botones.
 - **Sin formularios**, por decisión de alcance. GitHub Pages no tiene backend: si más
   adelante se quieren captar adhesiones, se resuelve con Formspree o un Google Form.
 
