@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<title>Generador de miniatura del video (1280×720)</title>
+<meta name="robots" content="noindex, nofollow">
+<!--
+  MINIATURA DEL VIDEO
+  Capturar el elemento .thumb a 1280×720 como assets/video.jpg (igual que og.html,
+  ver tools/generar-og.md). Existe porque YouTube sólo da 480×360 para este video.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#333; display:grid; place-items:center; min-height:100vh; }
+
+  .thumb{
+    width:1280px; height:720px; position:relative; overflow:hidden;
+    background:radial-gradient(120% 90% at 30% 40%, #D81E28 0%, #B4121B 55%, #8E0D14 100%);
+    color:#fff; font-family:"Roboto","Helvetica Neue",Arial,sans-serif;
+  }
+  .thumb::before{                       /* marco fino, como en el video */
+    content:""; position:absolute; inset:36px; border:2px solid rgba(255,255,255,.35);
+  }
+  .thumb img{
+    position:absolute; right:0; bottom:0; height:720px; width:620px;
+    object-fit:cover; object-position:58% 12%;
+    -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 22%);
+            mask-image:linear-gradient(90deg, transparent 0, #000 22%);
+  }
+  .txt{
+    position:absolute; left:70px; top:50%; transform:translateY(-50%);
+    width:600px; text-align:center;
+  }
+  .n{ font-weight:700; font-size:34px; letter-spacing:.06em; text-transform:uppercase; }
+  h1{
+    font-family:"Anton",Impact,sans-serif; font-weight:400; text-transform:uppercase;
+    line-height:.95; margin:6px 0 22px;
+  }
+  h1 span{ display:block; }
+  h1 .s{ font-size:164px; }
+  h1 .p{ font-size:96px; }
+  .c{ font-size:37px; line-height:1.25; }
+  .c b{ display:block; font-weight:700; }
+</style>
+</head>
+<body>
+<div class="thumb">
+  <img src="../assets/retrato.jpg" alt="">
+  <div class="txt">
+    <p class="n">Enrique</p>
+    <h1><span class="s">Sacco</span><span class="p">Presidente</span></h1>
+    <p class="c">Un nuevo Independiente <b>¡para volver a ganar!</b></p>
+  </div>
+</div>
+</body>
+</html>
